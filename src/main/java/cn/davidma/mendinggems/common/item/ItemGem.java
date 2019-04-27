@@ -1,21 +1,19 @@
-package cn.davidma.mendinggems.item;
+package cn.davidma.mendinggems.common.item;
 
 import java.util.List;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import cn.davidma.mendinggems.MendingGems;
-import cn.davidma.mendinggems.util.GemTier;
+import cn.davidma.mendinggems.common.misc.GemTier;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
@@ -50,7 +48,7 @@ public class ItemGem extends Item implements IBauble {
 	public String getItemStackDisplayName(ItemStack stack) {
 		int meta = stack.getMetadata();
 		if (meta < 0 || meta >= GemTier.values().length) meta = 0;
-		String prefix = I18n.format("tier.mendinggems.tier_" + meta);
+		String prefix = MendingGems.proxy.localize("tier.mendinggems.tier_" + meta);
 		return GemTier.getColorFromStack(stack) + (prefix + super.getItemStackDisplayName(stack));
 	}
 	
@@ -65,6 +63,7 @@ public class ItemGem extends Item implements IBauble {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
 		int cooldown = GemTier.getCooldownFromStack(stack);
 		tooltip.add(TextFormatting.GRAY + I18n.format("tooltip.mendinggems.mending_gem", cooldown / 20D));

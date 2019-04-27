@@ -4,16 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.davidma.mendinggems.client.ItemMeshGem;
-import cn.davidma.mendinggems.item.ItemGem;
+import cn.davidma.mendinggems.common.item.ItemGem;
+import cn.davidma.mendinggems.common.misc.IProxy;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 @Mod(modid = MendingGems.MOD_ID, name = MendingGems.MOD_NAME, version = MendingGems.VERSION)
 public class MendingGems {
@@ -24,6 +28,12 @@ public class MendingGems {
 	
 	@Instance
 	public static MendingGems instance;
+	
+	@SidedProxy(
+			clientSide = "cn.davidma.mendinggems.client.ClientProxy",
+			serverSide = "cn.davidma.mendinggems.common.ServerProxy"
+	)
+	public static IProxy proxy;
 	
 	public static Item gem;
 	

@@ -1,4 +1,4 @@
-package cn.davidma.mendinggems.util;
+package cn.davidma.mendinggems.common.misc;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;

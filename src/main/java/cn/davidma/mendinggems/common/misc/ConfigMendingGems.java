@@ -1,4 +1,4 @@
-package cn.davidma.mendinggems.util;
+package cn.davidma.mendinggems.common.misc;
 
 import cn.davidma.mendinggems.MendingGems;
 import net.minecraftforge.common.config.Config;
