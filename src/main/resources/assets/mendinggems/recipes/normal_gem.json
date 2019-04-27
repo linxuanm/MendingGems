@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" E ",
+		"GNG",
+		" D "
+	],
+	"key": {
+		"E": [{
+			"item": "minecraft:emerald"
+		}],
+		"D": [{
+			"item": "minecraft:diamond"
+		}],
+		"G": [{
+			"item": "mendinggems:mending_gem",
+			"data": 0
+		}],
+		"N": [{
+			"item": "minecraft:ender_eye"
+		}]
+	},
+	"result": {
+		"item": "mendinggems:mending_gem",
+		"data": 1
+	}
+}

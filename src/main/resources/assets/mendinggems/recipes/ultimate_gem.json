@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"DED",
+		"GNG",
+		"DED"
+	],
+	"key": {
+		"E": [{
+			"item": "minecraft:diamond"
+		}],
+		"D": [{
+			"item": "minecraft:blaze_rod"
+		}],
+		"G": [{
+			"item": "mendinggems:mending_gem",
+			"data": 2
+		}],
+		"N": [{
+			"item": "minecraft:nether_star"
+		}]
+	},
+	"result": {
+		"item": "mendinggems:mending_gem",
+		"data": 3
+	}
+}
