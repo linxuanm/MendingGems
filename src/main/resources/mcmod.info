@@ -3,8 +3,8 @@
   "modid": "mendinggems",
   "name": "Mending Gems",
   "description": "Adds gems that repair items in the player's inventory.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "mcversion": "1.12.2",
-  "authorList": ["David Ma"]
+  "authorList": ["davidmaamoaix"]
 }
 ]
