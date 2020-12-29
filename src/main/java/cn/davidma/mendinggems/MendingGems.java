@@ -13,7 +13,6 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
 
 @Mod(modid = MendingGems.MOD_ID, name = MendingGems.MOD_NAME, version = MendingGems.VERSION)
 public class MendingGems {
@@ -33,13 +32,17 @@ public class MendingGems {
 	
 	public static Item gem;
 	
-	@EventBusSubscriber(value = Side.CLIENT)
+	@EventBusSubscriber
 	public static class RegistryHandler {
 		
 		@SubscribeEvent
 		public static void registerItems(RegistryEvent.Register<Item> event) {
 			event.getRegistry().register(gem = new ItemGem());
 		}
+	}
+	
+	@EventBusSubscriber
+	public static class ModelHandler {
 		
 		@SubscribeEvent
 		public static void registerModels(ModelRegistryEvent event) {
