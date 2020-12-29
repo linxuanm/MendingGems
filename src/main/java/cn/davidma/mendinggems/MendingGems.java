@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
 @Mod(modid = MendingGems.MOD_ID, name = MendingGems.MOD_NAME, version = MendingGems.VERSION)
 public class MendingGems {
@@ -41,7 +42,7 @@ public class MendingGems {
 		}
 	}
 	
-	@EventBusSubscriber
+	@EventBusSubscriber(value = {Side.CLIENT})
 	public static class ModelHandler {
 		
 		@SubscribeEvent
