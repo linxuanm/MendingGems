@@ -16,6 +16,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -46,6 +48,7 @@ public class MendingGems {
 		}
 		
 		@SubscribeEvent
+                @SideOnly(Side.CLIENT)
 		public static void registerModels(ModelRegistryEvent event) {
 			ModelBakery.registerItemVariants(gem, ItemMeshGem.LESSER);
 			ModelBakery.registerItemVariants(gem, ItemMeshGem.GREATER);
